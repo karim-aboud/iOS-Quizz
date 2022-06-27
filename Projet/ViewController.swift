@@ -158,10 +158,13 @@ class ViewController: UIViewController {
         score.reset()
         questionSuivanteBtn.setTitle("Recommencer", for: .normal)
         correcteIncorrecteLbl.isHidden = true
-        premierBtn.isHidden = false
-        deuxiemeBtn.isHidden = false
-        troisiemeBtn.isHidden = false
-        quatriemeBtn.isHidden = false
+    }
+    
+    func getChoice(){
+        premierBtn.isHidden = true
+        deuxiemeBtn.isHidden = true
+        troisiemeBtn.isHidden = true
+        quatriemeBtn.isHidden = true
     }
     
     @IBAction func verifReponse(_ sender: UIButton ){
@@ -172,13 +175,16 @@ class ViewController: UIViewController {
             if(q.validerReponse(reponseFourni:rep)){
                 score.incrReponsesCorrectes()
                 correcteIncorrecteLbl.text = "Bonne réponse!"
+                
+                sender.backgroundColor = UIColor.green
                 correcteIncorrecteLbl.textColor = UIColor(red:1, green: 1, blue: 0, alpha: 1.0)
+                
                 // SON BONNE REPONSE
             } else{
                 score.incrReponsesInCorrectes()
                 correcteIncorrecteLbl.text = "Mauvaise réponse!"
                 
-                sender.backgroundColor = 
+                sender.backgroundColor = UIColor.red
                 
                 correcteIncorrecteLbl.textColor = UIColor(red:0.85, green: 0.30, blue: 0.31 , alpha: 1.0)
                 // SON MAUVAISE REPONSE
@@ -192,8 +198,20 @@ class ViewController: UIViewController {
         }
     }
     
+    func reinitBouttons(){
+        
+        premierBtn.backgroundColor = UIColor.systemBackground
+        deuxiemeBtn.backgroundColor = UIColor.systemBackground
+        troisiemeBtn.backgroundColor = UIColor.systemBackground
+        quatriemeBtn.backgroundColor = UIColor.systemBackground
+        
+    }
+    
     @IBAction func questionSuivanteBtnClick(){
         correcteIncorrecteLbl.isHidden = true
+        reinitBouttons()
+        
+        
         if(estTermine()){
             afficherScore()
         } else{

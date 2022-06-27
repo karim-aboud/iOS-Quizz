@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="in1-G1-DbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="540.57971014492762" y="77.678571428571431"/>
+            <point key="canvasLocation" x="540" y="77.488151658767762"/>
         </scene>
         <!--Quizz-->
         <scene sceneID="tne-QT-ifu">
@@ -95,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question apparaitra ici..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgR-Yo-Zrm">
-                                <rect key="frame" x="7.6666666666666572" y="74" width="375" height="200"/>
+                                <rect key="frame" x="8.6666666666666572" y="74" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="SqQ-cu-bvg"/>
                                     <constraint firstAttribute="width" constant="375" id="qn5-cZ-PuY"/>
@@ -105,7 +105,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correcte ou incorrecte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFw-Wk-9wG">
-                                <rect key="frame" x="109" y="221" width="172" height="20.333333333333343"/>
+                                <rect key="frame" x="110" y="234" width="172" height="20.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.329999999999998" id="5w4-8o-PgR"/>
                                     <constraint firstAttribute="width" constant="172" id="njC-nf-ROV"/>
@@ -115,7 +115,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="vp8-gk-ZX5">
-                                <rect key="frame" x="75.666666666666686" y="332.66666666666669" width="239" height="229.00000000000006"/>
+                                <rect key="frame" x="76.666666666666686" y="332.66666666666669" width="239" height="229.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idh-bs-XSr">
                                         <rect key="frame" x="0.0" y="0.0" width="239" height="31"/>
@@ -163,7 +163,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5p-3i-NRc">
-                                <rect key="frame" x="159" y="688" width="72" height="31"/>
+                                <rect key="frame" x="160" y="688" width="72" height="31"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -181,9 +181,11 @@
                             <constraint firstItem="K5p-3i-NRc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JDH-xD-ANa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K5p-3i-NRc" secondAttribute="bottom" constant="91" id="UJG-FE-DfE"/>
                             <constraint firstItem="xgR-Yo-Zrm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Zpo-YG-3Mw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BFw-Wk-9wG" secondAttribute="trailing" constant="110" id="cWc-ZE-J2K"/>
                             <constraint firstItem="xgR-Yo-Zrm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dfV-WT-1Wj"/>
-                            <constraint firstItem="BFw-Wk-9wG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="177" id="eF5-1l-I39"/>
+                            <constraint firstItem="BFw-Wk-9wG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="190" id="eF5-1l-I39"/>
                             <constraint firstItem="vp8-gk-ZX5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="goX-no-Gbv"/>
+                            <constraint firstItem="BFw-Wk-9wG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="h0k-Ta-dZK"/>
                             <constraint firstItem="vp8-gk-ZX5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="25" id="yOU-9g-LeA"/>
                         </constraints>
                     </view>

@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 
 class Score {
     var reponsesCorrectes:Double = 0
     var reponsesIncorrectes:Double = 0
     var nbQuestionsParTour:Double = 0
+
     
     func setNbQuestionsParTour(nbQuestionsParTour: Double){
         self.nbQuestionsParTour = nbQuestionsParTour
@@ -37,17 +39,22 @@ class Score {
     func getNbQuestionsParTour() -> Double {
         return self.nbQuestionsParTour
     }
+    
 
     func getScore() -> String {
         let ratio:Double =  reponsesCorrectes / nbQuestionsParTour
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "viewController") as! ViewController
+        nextVC.getChoice()
+        
         if( ratio == 1){
-            return "Génie!\n\n Ton score: \(reponsesCorrectes)/\(nbQuestionsParTour)"
+            return "Génie!\n\n Ton score: \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         } else if(ratio >= 0.75 && ratio <= 1){
-            return "Excellent!\n\n Ton score \(reponsesCorrectes)/\(nbQuestionsParTour)"
+            return "Excellent!\n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         } else if (ratio >= 0.65 && ratio <= 0.75){
-            return "Pas mal!\n\n Ton score \(reponsesCorrectes)/\(nbQuestionsParTour)"
+            return "Pas mal!\n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         }else{
-            return "Réesaye encore! \n\n Ton score \(reponsesCorrectes)/\(nbQuestionsParTour)"
+            return "Réesaye encore! \n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         }
     }
 }
