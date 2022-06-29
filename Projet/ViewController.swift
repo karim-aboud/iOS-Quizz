@@ -192,14 +192,29 @@ class ViewController: UIViewController {
                 correcteIncorrecteLbl.text = "Bonne réponse!"
                 
                 sender.backgroundColor = UIColor.green
+                
                 correcteIncorrecteLbl.textColor = UIColor(red:1, green: 1, blue: 0, alpha: 1.0)
                 
                 // SON BONNE REPONSE
-            } else{
+            } else {
                 score.incrReponsesInCorrectes()
                 correcteIncorrecteLbl.text = "Mauvaise réponse!"
                 
+                
+                let indexReponseCorrecte = q.getIndexReponseCorrecte()
+                
+                if(indexReponseCorrecte == 0 ){
+                    self.premierBtn.backgroundColor = .green
+                } else if(indexReponseCorrecte == 1){
+                    self.deuxiemeBtn.backgroundColor = .green
+                } else if(indexReponseCorrecte == 2){
+                    self.troisiemeBtn.backgroundColor = .green
+                } else {
+                    self.quatriemeBtn.backgroundColor = .green
+                }
+                       
                 sender.backgroundColor = UIColor.red
+                
                 
                 correcteIncorrecteLbl.textColor = UIColor(red:0.85, green: 0.30, blue: 0.31 , alpha: 1.0)
                 // SON MAUVAISE REPONSE

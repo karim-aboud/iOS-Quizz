@@ -42,9 +42,16 @@ class Question : Codable{
         return reponses
     }
     
+    
+    func getIndexReponseCorrecte() -> Int {
+        return indexReponseCorrecte
+    }
+    
     func getReponseIndex(index:Int) -> String {
         return reponses[index]
     }
+    
+    
     
     
 }
