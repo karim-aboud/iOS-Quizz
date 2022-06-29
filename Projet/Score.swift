@@ -46,16 +46,16 @@ class Score {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let nextVC = storyboard.instantiateViewController(withIdentifier: "viewController") as! ViewController
 //        nextVC.isButtonsHidden = true
-        nextVC.cacherBoutons()
+        //nextVC.cacherBoutons()
         
         if ratio == 1 {
-            return "Génie!\n\n Ton score: \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
+            return "Génie! 🔥\n\n Ton score: \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         } else if(ratio >= 0.75 && ratio <= 1){
-            return "Excellent!\n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
+            return "Excellent! 🎉\n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         } else if (ratio >= 0.65 && ratio <= 0.75){
-            return "Pas mal!\n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
+            return "Pas mal! 👌\n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         } else{
-            return "Réesaye encore! \n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
+            return "Réesaye encore! 👎\n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         }
     }
 }

@@ -158,12 +158,12 @@ class ViewController: UIViewController {
         return score.nbQuestionsPosees() >= score.getNbQuestionsParTour()
     }
     
-    func afficherScore(){
-        questionTexte.text = score.getScore(nextVC: self)
-        score.reset()
-        questionSuivanteBtn.setTitle("Recommencer", for: .normal)
-        correcteIncorrecteLbl.isHidden = true
-    }
+//    func afficherScore(){
+//        questionTexte.text = score.getScore(nextVC: self)
+//        score.reset()
+//        questionSuivanteBtn.setTitle("Recommencer", for: .normal)
+//        correcteIncorrecteLbl.isHidden = true
+//    }
     
     func afficherBoutons(){
         stackView.isHidden = false
@@ -177,13 +177,7 @@ class ViewController: UIViewController {
         quatriemeBtn.isEnabled = true
     }
     
-    func cacherBoutons(){
-        stackView.isHidden = true
-        premierBtn?.isHidden = true
-        deuxiemeBtn?.isHidden = true
-        troisiemeBtn?.isHidden = true
-        quatriemeBtn?.isHidden = true
-    }
+   
     
     @IBAction func verifReponse(_ sender: UIButton ){
         
@@ -236,14 +230,24 @@ class ViewController: UIViewController {
         
         
         if(estTermine()){
-            afficherScore()
+//            afficherScore()
             self.numeroTourCourant = 1
-           
+            self.goToResult()
         } else{
             afficherQuestion()
             self.compteurQuestion.text = String(self.numeroTourCourant) + "/\(Int(score.getNbQuestionsParTour()))"
         }
     }
+    
+    func goToResult(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let resultVC = storyboard.instantiateViewController(withIdentifier: "resultatVC") as! ResultatViewController
+        resultVC.resultat = score.getScore(nextVC: self)
+        resultVC.score = score.reponsesCorrectes
+        resultVC.nbTotalQuestions = score.getNbQuestionsParTour()
+        self.navigationController?.pushViewController(resultVC, animated: true)
+    }
+    
     
     func afficherQuestion(){
         
