@@ -18,9 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mAD-5Z-twi">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="810"/>
-                                <color key="backgroundColor" red="0.041012682020000003" green="0.1431018412" blue="0.58044952149999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="0.0" y="197" width="390" height="450"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.14117647058823529" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="KWz-iY-bKu"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kGG-26-ZDl">
                                     <size key="itemSize" width="182" height="173"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -35,15 +38,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="182" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JyW-88-Xyo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="140"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JyW-88-Xyo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="136"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="136" id="9MW-7I-BPA"/>
                                                         <constraint firstAttribute="width" constant="182" id="Ac8-x2-ehE"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oA-qX-OqD">
-                                                    <rect key="frame" x="8" y="141" width="166" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oA-qX-OqD">
+                                                    <rect key="frame" x="8" y="139" width="166" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
@@ -69,11 +72,10 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9iI-Fq-cjh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.039215686274509803" green="0.14117647058823529" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="9iI-Fq-cjh" firstAttribute="bottom" secondItem="mAD-5Z-twi" secondAttribute="bottom" id="ADU-HP-1rr"/>
-                            <constraint firstItem="mAD-5Z-twi" firstAttribute="top" secondItem="daN-iW-cf4" secondAttribute="top" id="FIE-il-HqR"/>
                             <constraint firstItem="mAD-5Z-twi" firstAttribute="leading" secondItem="9iI-Fq-cjh" secondAttribute="leading" id="HGo-3X-Nnu"/>
+                            <constraint firstItem="mAD-5Z-twi" firstAttribute="centerY" secondItem="daN-iW-cf4" secondAttribute="centerY" id="nIw-5v-AXu"/>
                             <constraint firstItem="9iI-Fq-cjh" firstAttribute="trailing" secondItem="mAD-5Z-twi" secondAttribute="trailing" id="r2z-25-fej"/>
                         </constraints>
                     </view>
@@ -95,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question apparaitra ici..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgR-Yo-Zrm">
-                                <rect key="frame" x="8.6666666666666572" y="74" width="375" height="200"/>
+                                <rect key="frame" x="7.6666666666666572" y="74" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="SqQ-cu-bvg"/>
                                     <constraint firstAttribute="width" constant="375" id="qn5-cZ-PuY"/>
@@ -105,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correcte ou incorrecte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFw-Wk-9wG">
-                                <rect key="frame" x="110" y="234" width="172" height="20.333333333333343"/>
+                                <rect key="frame" x="110" y="234" width="170" height="20.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.329999999999998" id="5w4-8o-PgR"/>
                                     <constraint firstAttribute="width" constant="172" id="njC-nf-ROV"/>
@@ -115,7 +117,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="vp8-gk-ZX5">
-                                <rect key="frame" x="76.666666666666686" y="332.66666666666669" width="239" height="229.00000000000006"/>
+                                <rect key="frame" x="75.666666666666686" y="332.66666666666669" width="239" height="229.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idh-bs-XSr">
                                         <rect key="frame" x="0.0" y="0.0" width="239" height="31"/>
@@ -163,7 +165,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5p-3i-NRc">
-                                <rect key="frame" x="160" y="688" width="72" height="31"/>
+                                <rect key="frame" x="159" y="688" width="72" height="31"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -197,6 +199,7 @@
                         <outlet property="quatriemeBtn" destination="txH-YR-FOW" id="WLc-8f-OyI"/>
                         <outlet property="questionSuivanteBtn" destination="K5p-3i-NRc" id="JvG-D9-2wY"/>
                         <outlet property="questionTexte" destination="xgR-Yo-Zrm" id="XWL-sH-EGV"/>
+                        <outlet property="stackView" destination="vp8-gk-ZX5" id="My4-wZ-nBj"/>
                         <outlet property="troisiemeBtn" destination="dw5-yl-gfU" id="Nbs-7i-zFN"/>
                     </connections>
                 </viewController>

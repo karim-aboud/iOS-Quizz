@@ -41,19 +41,20 @@ class Score {
     }
     
 
-    func getScore() -> String {
+    func getScore(nextVC: ViewController) -> String {
         let ratio:Double =  reponsesCorrectes / nbQuestionsParTour
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "viewController") as! ViewController
-        nextVC.getChoice()
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let nextVC = storyboard.instantiateViewController(withIdentifier: "viewController") as! ViewController
+//        nextVC.isButtonsHidden = true
+        nextVC.cacherBoutons()
         
-        if( ratio == 1){
+        if ratio == 1 {
             return "Génie!\n\n Ton score: \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         } else if(ratio >= 0.75 && ratio <= 1){
             return "Excellent!\n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         } else if (ratio >= 0.65 && ratio <= 0.75){
             return "Pas mal!\n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
-        }else{
+        } else{
             return "Réesaye encore! \n\n Ton score \(Int(reponsesCorrectes))/\(Int(nbQuestionsParTour))"
         }
     }

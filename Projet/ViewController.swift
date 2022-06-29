@@ -17,11 +17,11 @@ class ViewController: UIViewController {
     var questionCourante: Question? = nil
     
     var selectedCategory: Categorie?
-    
- 
+     
     @IBOutlet weak var questionTexte: UILabel!
     @IBOutlet weak var correcteIncorrecteLbl: UILabel!
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var premierBtn: UIButton!
     @IBOutlet weak var deuxiemeBtn: UIButton!
     @IBOutlet weak var troisiemeBtn: UIButton!
@@ -154,17 +154,31 @@ class ViewController: UIViewController {
     }
     
     func afficherScore(){
-        questionTexte.text = score.getScore()
+        questionTexte.text = score.getScore(nextVC: self)
         score.reset()
         questionSuivanteBtn.setTitle("Recommencer", for: .normal)
         correcteIncorrecteLbl.isHidden = true
     }
     
-    func getChoice(){
-        premierBtn.isHidden = true
-        deuxiemeBtn.isHidden = true
-        troisiemeBtn.isHidden = true
-        quatriemeBtn.isHidden = true
+    func afficherBoutons(){
+        stackView.isHidden = false
+        premierBtn?.isHidden = false
+        premierBtn.isEnabled = true
+        deuxiemeBtn?.isHidden = false
+        deuxiemeBtn.isEnabled = true
+        troisiemeBtn?.isHidden = false
+        troisiemeBtn.isEnabled = true
+        quatriemeBtn?.isHidden = false
+        quatriemeBtn.isEnabled = true
+    }
+    
+    func cacherBoutons(){
+        print("iciiiiiiii")
+        stackView.isHidden = true
+        premierBtn?.isHidden = true
+        deuxiemeBtn?.isHidden = true
+        troisiemeBtn?.isHidden = true
+        quatriemeBtn?.isHidden = true
     }
     
     @IBAction func verifReponse(_ sender: UIButton ){
@@ -214,6 +228,7 @@ class ViewController: UIViewController {
         
         if(estTermine()){
             afficherScore()
+           
         } else{
             afficherQuestion()
         }
@@ -223,11 +238,7 @@ class ViewController: UIViewController {
         
         questionCourante = getQuestionAleat()
         questionSuivanteBtn.isEnabled = false
-        
-        premierBtn.isEnabled = true
-        deuxiemeBtn.isEnabled = true
-        troisiemeBtn.isEnabled = true
-        quatriemeBtn.isEnabled = true
+        self.afficherBoutons()
         
         if let q = questionCourante {
             let choix = q.getChoix()
@@ -250,10 +261,6 @@ class ViewController: UIViewController {
             
         }
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }
  
