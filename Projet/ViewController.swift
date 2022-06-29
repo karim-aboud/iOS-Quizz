@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     let score = Score()
     var questionsDejaPosees : [Int] = []
     var questionCourante: Question? = nil
+    var numeroTourCourant: Int = 1
     
     var selectedCategory: Categorie?
      
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var troisiemeBtn: UIButton!
     @IBOutlet weak var quatriemeBtn: UIButton!
     @IBOutlet weak var questionSuivanteBtn: UIButton!
+    
+    @IBOutlet weak var compteurQuestion: UILabel!
     
     
     override func viewDidLoad() {
@@ -51,6 +54,7 @@ class ViewController: UIViewController {
         
         
         initData()
+        
         jouerSon(nomFichier: "dingding.wav")
     }
 
@@ -129,6 +133,7 @@ class ViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.afficherQuestion()
+                self.compteurQuestion.text = String(self.numeroTourCourant) + "/\(Int(self.score.getNbQuestionsParTour()))"
             }
         }
     }
@@ -173,7 +178,6 @@ class ViewController: UIViewController {
     }
     
     func cacherBoutons(){
-        print("iciiiiiiii")
         stackView.isHidden = true
         premierBtn?.isHidden = true
         deuxiemeBtn?.isHidden = true
@@ -182,6 +186,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func verifReponse(_ sender: UIButton ){
+        
+        self.numeroTourCourant+=1
+        
         if let q = questionCourante, let rep = sender.titleLabel?.text {
             
             print("\n\nList Reponses = \(q.getReponses())")
@@ -203,6 +210,8 @@ class ViewController: UIViewController {
                 correcteIncorrecteLbl.textColor = UIColor(red:0.85, green: 0.30, blue: 0.31 , alpha: 1.0)
                 // SON MAUVAISE REPONSE
             }
+            
+            
             premierBtn.isEnabled = false
             deuxiemeBtn.isEnabled = false
             troisiemeBtn.isEnabled = false
@@ -228,9 +237,11 @@ class ViewController: UIViewController {
         
         if(estTermine()){
             afficherScore()
+            self.numeroTourCourant = 1
            
         } else{
             afficherQuestion()
+            self.compteurQuestion.text = String(self.numeroTourCourant) + "/\(Int(score.getNbQuestionsParTour()))"
         }
     }
     
