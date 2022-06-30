@@ -33,7 +33,7 @@ class ResultatViewController: UIViewController {
             
             
         } else if(ratio >= 0.20 && ratio <= 0.45){
-            playSound(son: "impossible")
+            playSound(son: "impossible.mp3")
             
         } else{
             // SON < 20 %
