@@ -22,16 +22,14 @@ class ResultatViewController: UIViewController {
         
         let ratio:Double = score/nbTotalQuestions
         
-        if ratio == 1 {
+        if (ratio >= 0.75 && ratio <= 1){
            
             playSound(son: "ctsur.mp3")
             
-        } else if(ratio >= 0.65 && ratio <= 1){
-           
-            // SON 75 %
+        } else if(ratio >= 0.65 && ratio <= 0.75){
+            playSound(son: "applaudissement.mp3")
             
         } else if (ratio >= 0.45 && ratio <= 0.65){
-            // SON 65 %
             
             
         } else if(ratio >= 0.20 && ratio <= 0.45){
